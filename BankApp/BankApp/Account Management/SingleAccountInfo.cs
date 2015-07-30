@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace BankApp
 {
-    class Program
+    public class SingleAccountInfo
     {
-        static void Main(string[] args)
-        {
-            
-        }
+        public SingleAccountInfo()
+        { }
+
     }
 }

@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace BankApp
 {
-    class Program
+    public interface IRequestComms
     {
-        static void Main(string[] args)
-        {
-            
-        }
+        CommunicationsResponse RetrieveSelectedBankAccountDetails(BankCommsCapsule capsule);
     }
 }
