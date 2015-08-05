@@ -6,7 +6,12 @@ namespace BankApp
     {
         internal BankCommsCapsule CreateBankCommunicationsCapsule(SingleAccountInfo info)
         {
-            throw new NotImplementedException();
+            ConfigReader configReader = new ConfigReader();
+
+            BankCommsCapsule capsule = configReader.ReadAccountInfo(info);
+
+            return capsule;
         }
     }
+
 }

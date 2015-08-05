@@ -46,18 +46,24 @@
   <ItemGroup>
     <Compile Include="Account Management\AccountInfoRequestFactory.cs" />
     <Compile Include="Account Management\AccountInfoResponseParser.cs" />
-    <Compile Include="Account Management\BankAccountDetails.cs" />
-    <Compile Include="Comms\BankCommsCapsule.cs" />
+    <Compile Include="Account Management\AccountManager.cs" />
+    <Compile Include="ApplicationManager.cs" />
+    <Compile Include="Data\BankAccountCollection.cs" />
+    <Compile Include="Readers\ConfigReader.cs" />
+    <Compile Include="Data\BankAccountDetails.cs" />
+    <Compile Include="Data\BankCommsCapsule.cs" />
     <Compile Include="Comms\CommunicationModule.cs" />
     <Compile Include="Comms\CommunicationsResponse.cs" />
     <Compile Include="Comms\IRequestComms.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Account Management\SingleAccountInfo.cs" />
+    <Compile Include="Data\SingleAccountInfo.cs" />
+    <Compile Include="UIDisplayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -24,7 +24,7 @@ namespace BankApp
             AccountInfoRequestFactory factory = new AccountInfoRequestFactory();
             BankCommsCapsule capsule = factory.CreateBankCommunicationsCapsule(info);
 
-            CommunicationsResponse resp = _selectedComms.RetrieveSelectedBankAccountDetails(capsule);
+            CommunicationsResponse resp = _selectedComms.RetrieveSelectedBankAccountDetails(capsule);//the part where magic happens
 
             AccountInfoResponseParser parser = new AccountInfoResponseParser();
             BankAccountDetails details = parser.FormAccountDetails(resp);

@@ -9,7 +9,9 @@ namespace BankApp
     public class SingleAccountInfo
     {
         public SingleAccountInfo()
-        { }
+        {
+
+        }
 
     }
 }
