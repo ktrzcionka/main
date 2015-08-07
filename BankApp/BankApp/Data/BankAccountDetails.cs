@@ -1,6 +1,10 @@
-﻿namespace BankApp
+﻿using Newtonsoft.Json;
+
+namespace BankApp
 {
     public class BankAccountDetails
     {
     }
+
+    
 }

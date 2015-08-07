@@ -8,9 +8,11 @@ namespace BankApp
 {
     class AccountManager
     {
-        internal BankAccountCollection AllBankAccounts()
+        internal SingleAccountInfo AllBankAccounts()
         {
-            throw new NotImplementedException();
+           ConfigReader reader = new ConfigReader();
+            return reader.ReadAccountsList();
+
         }
     }
 }

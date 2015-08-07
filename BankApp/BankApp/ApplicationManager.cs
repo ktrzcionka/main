@@ -13,9 +13,11 @@ namespace BankApp
         public void Initialise()
         {
             AccountManager accountManager = new AccountManager();
-            BankAccountCollection bac = accountManager.AllBankAccounts();
+            //BankAccountCollection bac = accountManager.AllBankAccounts();
 
-            uiDisp.DisplayBankAccounts();
+            SingleAccountInfo bankInfo = accountManager.AllBankAccounts();
+
+            uiDisp.DisplayBankAccounts(bankInfo);
 
         }
 

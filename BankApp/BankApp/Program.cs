@@ -12,6 +12,7 @@ namespace BankApp
         {
             ApplicationManager appManager = new ApplicationManager();
             appManager.BuildUI();
+            appManager.Initialise();
             
         }
     }
