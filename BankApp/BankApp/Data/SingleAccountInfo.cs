@@ -14,6 +14,8 @@ namespace BankApp
 
         [JsonProperty(PropertyName = "accountType")]
         public string accountType { get; set; }
+
+
     }
 
     

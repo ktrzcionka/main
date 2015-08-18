@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Web;
+using System.Net;
 
 
 
@@ -87,8 +89,13 @@ namespace BankApp
 
         public CommunicationsResponse RetrieveSelectedBankAccountDetails(BankCommsCapsule capsule)
         {
-            // true stuff
-            throw new NotImplementedException("not yet");
+            string address = "https://online.mbank.pl/pl/Login";
+            WebClient client = new WebClient();
+            byte[] result = client.UploadData(address, 
+                "POST", System.Text.Encoding.ASCII.GetBytes("login=11&amp;"));
+
+            throw new NotImplementedException("lets try selenium...");
+
         }
     }
 

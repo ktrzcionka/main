@@ -9,17 +9,26 @@ namespace BankApp
     class ApplicationManager
     {
         public UIDisplayer uiDisp = new UIDisplayer();
+        public SingleAccountInfo[] allBanksInfo;
 
         public void Initialise()
         {
             AccountManager accountManager = new AccountManager();
-            //BankAccountCollection bac = accountManager.AllBankAccounts();
+            allBanksInfo = accountManager.AllBankAccounts();
 
-            SingleAccountInfo bankInfo = accountManager.AllBankAccounts();
+            foreach (var bankInfo in allBanksInfo)
+            {
+                uiDisp.DisplayBankAccounts(bankInfo);
+            }
 
-            uiDisp.DisplayBankAccounts(bankInfo);
+            string selectedAccount = uiDisp.ChooseAccount();
+            SingleAccountInfo chosenAccount = accountManager.ChooseAccount(selectedAccount, allBanksInfo);
+            accountManager.GiveAccountDetails(chosenAccount);
 
         }
+
+
+
 
         public void BuildUI()
         {

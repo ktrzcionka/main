@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 
 namespace BankApp
@@ -10,5 +11,6 @@ namespace BankApp
     public interface IRequestComms
     {
         CommunicationsResponse RetrieveSelectedBankAccountDetails(BankCommsCapsule capsule);
+           
     }
 }

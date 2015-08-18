@@ -6,19 +6,12 @@ namespace BankApp
 {
     public class ConfigReader
     {
-        internal SingleAccountInfo ReadAccountsList()
+        internal SingleAccountInfo[] ReadAccountsList()
         {
-            //JObject jObject = JObject.Parse(File.ReadAllText(@"c:\bank.json"));
             string text = File.ReadAllText(@"C:\bank.json");
-            SingleAccountInfo[] accounts;
+            SingleAccountInfo[] accounts = JsonConvert.DeserializeObject<SingleAccountInfo[]>(text);
 
-            //foreach (BankInfo account in accounts)
-            //{
-                
-            //}
-
-            var bankInfo = JsonConvert.DeserializeObject<SingleAccountInfo>(text);
-            return bankInfo;
+            return accounts;
         }
 
         internal BankCommsCapsule ReadAccountInfo(SingleAccountInfo info)
