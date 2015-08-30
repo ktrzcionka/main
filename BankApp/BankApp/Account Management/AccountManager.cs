@@ -30,8 +30,12 @@ namespace BankApp
 
         }
 
-        internal BankCommsCapsule GiveAccountDetails(SingleAccountInfo selectedAccountInfo)
+        internal BankAccountDetails GiveAccountDetails(SingleAccountInfo selectedAccountInfo)
         {
+            WebRequestComms sComms = new WebRequestComms();
+            CommunicationModule comms = new CommunicationModule(sComms);
+
+            return comms.GiveAccountDetails(selectedAccountInfo);
 
         }
     }

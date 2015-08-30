@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Web;
 using System.Net;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+
+
 
 
 
@@ -14,7 +18,7 @@ namespace BankApp
     public class CommunicationModule
     {
 
-    	IRequestComms _selectedComms;
+        IRequestComms _selectedComms;
 
         public CommunicationModule(IRequestComms selectedComms)
         {
@@ -90,11 +94,12 @@ namespace BankApp
         public CommunicationsResponse RetrieveSelectedBankAccountDetails(BankCommsCapsule capsule)
         {
             string address = "https://online.mbank.pl/pl/Login";
-            WebClient client = new WebClient();
-            byte[] result = client.UploadData(address, 
-                "POST", System.Text.Encoding.ASCII.GetBytes("login=11&amp;"));
+            CommunicationsResponse response = new CommunicationsResponse();
 
-            throw new NotImplementedException("lets try selenium...");
+            //System.setProperty("webdriver.chrome.driver", "E://chromedriver.exe");
+            ChromeDriver driver = new ChromeDriver();
+            driver.Navigate().GoToUrl(address);
+            return response;
 
         }
     }

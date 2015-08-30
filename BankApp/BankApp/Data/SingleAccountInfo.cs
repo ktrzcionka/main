@@ -15,7 +15,11 @@ namespace BankApp
         [JsonProperty(PropertyName = "accountType")]
         public string accountType { get; set; }
 
+        [JsonProperty(PropertyName = "login")]
+        public string login { get; set; }
 
+        [JsonProperty(PropertyName = "password")]
+        public string password { get; set; }
     }
 
     

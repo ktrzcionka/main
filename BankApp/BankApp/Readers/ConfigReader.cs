@@ -16,7 +16,10 @@ namespace BankApp
 
         internal BankCommsCapsule ReadAccountInfo(SingleAccountInfo info)
         {
-            throw new NotImplementedException();
+
+            BankCommsCapsule commsCapsule = new BankCommsCapsule(info.login, info.password);
+            //TODO bank url creation
+            return commsCapsule;
         }
     }
 
