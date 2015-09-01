@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Web;
 using System.Net;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-
+using OpenQA.Selenium.Support.UI;
 
 
 
@@ -96,9 +97,21 @@ namespace BankApp
             string address = "https://online.mbank.pl/pl/Login";
             CommunicationsResponse response = new CommunicationsResponse();
 
-            //System.setProperty("webdriver.chrome.driver", "E://chromedriver.exe");
             ChromeDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl(address);
+
+//            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            Thread.Sleep(3000);
+            
+            IWebElement login = driver.FindElementByName("userID");
+            IWebElement password = driver.FindElementByName("pass");
+
+            login.SendKeys(capsule._login);
+            password.SendKeys(capsule._password);
+
+            password.Submit();
+
+            driver.Quit();
             return response;
 
         }
